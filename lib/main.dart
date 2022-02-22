@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.deepPurple[100],
+        backgroundColor: Colors.blueAccent[100],
         body: Column(
           children: <Widget>[
             Expanded(

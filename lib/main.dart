@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:new_calculator_app/buttons.dart';
 import 'package:math_expressions/math_expressions.dart';
 
@@ -73,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         alignment: Alignment.centerRight,
                         child: Text(
                           userAnswer,
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 50, fontWeight: FontWeight.w700),
                         ))
                   ],
                 ),
@@ -103,15 +104,30 @@ class _MyHomePageState extends State<MyHomePage> {
                         // Delete button
                         else if (index == 1) {
                           return MyButton(
-                            
+
                               buttonTapped: () {
-                                setState(() {
+                                if(userQuestion != ''){
+                                  setState(() { 
                                   userQuestion = userQuestion.substring(
                                       0, userQuestion.length - 1);
                                 });
+                                }
+                                
                               },
                               color: Colors.red,
                               textColor: Colors.white,
+                              buttonText: buttons[index]);
+                        }
+                        // ANSWER BUTTON
+                        else if (index == buttons.length - 2){
+                          return MyButton(
+                              buttonTapped: () {
+                                setState(() {
+                                   userQuestion = userAnswer;
+                                });
+                              },
+                              color: Colors.white,
+                              textColor: Colors.deepPurple,
                               buttonText: buttons[index]);
                         }
                         // EQUAL BUTTON

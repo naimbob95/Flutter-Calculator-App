@@ -1,6 +1,5 @@
-# new_calculator_app
-
-A new Flutter project.
+# Calculate App build with flutter
+Calculator app for studying flutter framework
 
 ## Getting Started
 
